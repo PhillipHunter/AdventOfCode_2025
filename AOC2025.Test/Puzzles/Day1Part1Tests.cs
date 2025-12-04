@@ -28,5 +28,40 @@ namespace AOC2025.Tests.Puzzles
         {
             CommonTests.ValidateOutput<Day1Part1>(false);
         }
+
+        [Theory]
+        [InlineData(50, -68, 82)]
+        [InlineData(52, 48, 0)]
+        [InlineData(20, -20, 0)]
+        [InlineData(20, 80, 0)]
+        [InlineData(88, 479, 67)]
+        [InlineData(57, -238, -81)]
+        public void CalculateNewPosition_WhenCalled_ReturnsProperResult(
+            int currentPos,
+            int movement,
+            int expected
+        )
+        {
+            // Act
+            var result = Day1Part1.CalculateNewPosition(currentPos, movement);
+
+            // Assert
+            Assert.Equal(expected, result);
+        }
+
+        [Theory]
+        [InlineData("R20", 20)]
+        [InlineData("L35", -35)]
+        public void RotationTextToMovement_WhenCalled_ReturnsProperResult(
+            string rotationText,
+            int expected
+        )
+        {
+            // Act
+            var result = Day1Part1.RotationTextToMovement(rotationText);
+
+            // Assert
+            Assert.Equal(expected, result);
+        }
     }
 }
