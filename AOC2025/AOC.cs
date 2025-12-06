@@ -14,6 +14,7 @@ namespace AOC2025
             AdventPuzzles.Add(new Day1Part1());
             AdventPuzzles.Add(new Day2Part1());
             AdventPuzzles.Add(new Day2Part2());
+            AdventPuzzles.Add(new Day3Part1());
             AdventPuzzles.Add(new Day6Part1());
             #endregion Puzzle List
 
