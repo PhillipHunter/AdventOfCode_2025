@@ -13,6 +13,7 @@ namespace AOC2025
         private readonly string _name;
         private readonly string _part;
         private readonly string _solutionDirectory;
+        private readonly string _puzzleInputDirectory;
 
         public AdventPuzzleScaffolder(string day, string name, string part)
         {
@@ -22,6 +23,9 @@ namespace AOC2025
 
             _solutionDirectory =
                 ConfigurationManager.AppSettings["SolutionDirectory"] ?? "../../../../";
+
+            _puzzleInputDirectory =
+                ConfigurationManager.AppSettings["PuzzleInputDirectory"] ?? "../../../../Inputs";
         }
 
         public void ScaffoldPuzzle()
@@ -38,6 +42,7 @@ namespace AOC2025
 
             GeneratePuzzleCodeFile();
             GeneratePuzzleUnitTest();
+            GenerateEmptyInputFiles();
             UpdatePuzzleList();
 
             AOC.Log("Scaffolding puzzle complete.");
@@ -87,6 +92,18 @@ namespace AOC2025
             File.WriteAllText(puzzleCodeFileFullPath, puzzleCodeFileText);
 
             AOC.Log($"Unit Test file generated: {puzzleCodeFileFullPath}");
+        }
+
+        private void GenerateEmptyInputFiles()
+        {
+            File.WriteAllText(Path.Combine(_puzzleInputDirectory, $"Day{_day}.txt"), string.Empty);
+
+            File.WriteAllText(
+                Path.Combine(_puzzleInputDirectory, $"Day{_day}Ex.txt"),
+                string.Empty
+            );
+
+            AOC.Log($"Input files generated at {_puzzleInputDirectory}.");
         }
 
         private void UpdatePuzzleList()
