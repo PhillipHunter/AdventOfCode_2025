@@ -1,4 +1,4 @@
-﻿using System.Diagnostics;
+using System.Diagnostics;
 using AOC2025.Puzzles;
 
 namespace AOC2025
@@ -10,9 +10,11 @@ namespace AOC2025
         public static IAdventPuzzle[] GetAdventPuzzles()
         {
             // Add Puzzles Here
+            #region Puzzle List
             AdventPuzzles.Add(new Day1Part1());
             AdventPuzzles.Add(new Day2Part1());
             AdventPuzzles.Add(new Day2Part2());
+            #endregion Puzzle List
 
             return AdventPuzzles.ToArray();
         }
