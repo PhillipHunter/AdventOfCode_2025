@@ -96,14 +96,25 @@ namespace AOC2025
 
         private void GenerateEmptyInputFiles()
         {
-            File.WriteAllText(Path.Combine(_puzzleInputDirectory, $"Day{_day}.txt"), string.Empty);
+            if (!File.Exists(Path.Combine(_puzzleInputDirectory, $"Day{_day}.txt")))
+            {
+                File.WriteAllText(
+                    Path.Combine(_puzzleInputDirectory, $"Day{_day}.txt"),
+                    string.Empty
+                );
 
-            File.WriteAllText(
-                Path.Combine(_puzzleInputDirectory, $"Day{_day}Ex.txt"),
-                string.Empty
-            );
+                AOC.Log($"Input files generated at {_puzzleInputDirectory}.");
+            }
 
-            AOC.Log($"Input files generated at {_puzzleInputDirectory}.");
+            if (!File.Exists(Path.Combine(_puzzleInputDirectory, $"Day{_day}Ex.txt")))
+            {
+                File.WriteAllText(
+                    Path.Combine(_puzzleInputDirectory, $"Day{_day}Ex.txt"),
+                    string.Empty
+                );
+
+                AOC.Log($"Example files generated at {_puzzleInputDirectory}.");
+            }
         }
 
         private void UpdatePuzzleList()
