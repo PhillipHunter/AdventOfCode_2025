@@ -37,12 +37,13 @@
             lblStatus = new ToolStripStatusLabel();
             lblSolution = new Label();
             lblSolutionDisplay = new Label();
+            btnScaffold = new Button();
             statusStrip.SuspendLayout();
             SuspendLayout();
             // 
             // btnGenerate
             // 
-            btnGenerate.Location = new Point(380, 11);
+            btnGenerate.Location = new Point(380, 31);
             btnGenerate.Name = "btnGenerate";
             btnGenerate.Size = new Size(94, 29);
             btnGenerate.TabIndex = 0;
@@ -53,7 +54,7 @@
             // cboSelectDay
             // 
             cboSelectDay.FormattingEnabled = true;
-            cboSelectDay.Location = new Point(148, 12);
+            cboSelectDay.Location = new Point(148, 32);
             cboSelectDay.Name = "cboSelectDay";
             cboSelectDay.Size = new Size(226, 28);
             cboSelectDay.TabIndex = 1;
@@ -62,7 +63,7 @@
             // lblSelectDay
             // 
             lblSelectDay.AutoSize = true;
-            lblSelectDay.Location = new Point(63, 16);
+            lblSelectDay.Location = new Point(63, 36);
             lblSelectDay.Name = "lblSelectDay";
             lblSelectDay.Size = new Size(79, 20);
             lblSelectDay.TabIndex = 2;
@@ -70,7 +71,7 @@
             // 
             // txtResult
             // 
-            txtResult.Location = new Point(148, 108);
+            txtResult.Location = new Point(148, 128);
             txtResult.Name = "txtResult";
             txtResult.ReadOnly = true;
             txtResult.Size = new Size(326, 27);
@@ -79,7 +80,7 @@
             // lblResult
             // 
             lblResult.AutoSize = true;
-            lblResult.Location = new Point(93, 111);
+            lblResult.Location = new Point(93, 131);
             lblResult.Name = "lblResult";
             lblResult.Size = new Size(49, 20);
             lblResult.TabIndex = 4;
@@ -89,7 +90,7 @@
             // 
             statusStrip.ImageScalingSize = new Size(20, 20);
             statusStrip.Items.AddRange(new ToolStripItem[] { lblStatus });
-            statusStrip.Location = new Point(0, 173);
+            statusStrip.Location = new Point(0, 218);
             statusStrip.Name = "statusStrip";
             statusStrip.Size = new Size(575, 26);
             statusStrip.TabIndex = 6;
@@ -107,7 +108,7 @@
             // lblSolution
             // 
             lblSolution.AutoSize = true;
-            lblSolution.Location = new Point(78, 141);
+            lblSolution.Location = new Point(78, 161);
             lblSolution.Name = "lblSolution";
             lblSolution.Size = new Size(64, 20);
             lblSolution.TabIndex = 8;
@@ -117,17 +118,28 @@
             // 
             lblSolutionDisplay.AutoSize = true;
             lblSolutionDisplay.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            lblSolutionDisplay.Location = new Point(148, 141);
+            lblSolutionDisplay.Location = new Point(148, 161);
             lblSolutionDisplay.Name = "lblSolutionDisplay";
             lblSolutionDisplay.Size = new Size(93, 20);
             lblSolutionDisplay.TabIndex = 9;
             lblSolutionDisplay.Text = "#SOLUTION";
             // 
+            // btnScaffold
+            // 
+            btnScaffold.Location = new Point(469, 177);
+            btnScaffold.Name = "btnScaffold";
+            btnScaffold.Size = new Size(94, 29);
+            btnScaffold.TabIndex = 10;
+            btnScaffold.Text = "Scaffold";
+            btnScaffold.UseVisualStyleBackColor = true;
+            btnScaffold.Click += btnScaffold_Click;
+            // 
             // AdventForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(575, 199);
+            ClientSize = new Size(575, 244);
+            Controls.Add(btnScaffold);
             Controls.Add(lblSolutionDisplay);
             Controls.Add(lblSolution);
             Controls.Add(statusStrip);
@@ -157,5 +169,6 @@
         private ToolStripStatusLabel lblStatus;
         private Label lblSolution;
         private Label lblSolutionDisplay;
+        private Button btnScaffold;
     }
 }

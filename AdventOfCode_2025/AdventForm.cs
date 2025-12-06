@@ -81,5 +81,10 @@ namespace AdventOfCode_2025_Interface
                 lblSolutionDisplay.Text = string.Empty;
             }
         }
+
+        private void btnScaffold_Click(object sender, EventArgs e)
+        {
+            new ScaffolderForm().ShowDialog();
+        }
     }
 }
