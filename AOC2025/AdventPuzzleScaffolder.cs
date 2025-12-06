@@ -141,6 +141,7 @@ namespace AOC2025
             }
 
             inRegionLines.Add($"            AdventPuzzles.Add(new Day{_day}Part{_part}());");
+            inRegionLines.Sort();
 
             var outputBuilder = new StringBuilder();
 
